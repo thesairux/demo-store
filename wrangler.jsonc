@@ -1,7 +1,7 @@
 // Configuración para Cloudflare Workers (proyecto con dirección .workers.dev).
 // Si usas Cloudflare Pages (.pages.dev), este archivo no se usa: Pages usa functions/ directamente.
 {
-  "name": "demo-store",
+  "name": "demo-web",
   "main": "worker.js",
   "compatibility_date": "2025-09-01",
 
@@ -13,7 +13,7 @@
   // Para activarla: en Cloudflare, Storage & Databases → D1 → Create, y pega aquí
   // el «Database ID». Mientras esté en blanco, la analítica queda apagada y la
   // página funciona igual.
-  // "d1_databases": [{ "binding": "DB", "database_name": "demo-store-estadisticas", "database_id": "PEGA-AQUI-EL-ID" }],
+  // "d1_databases": [{ "binding": "DB", "database_name": "demo-web-estadisticas", "database_id": "PEGA-AQUI-EL-ID" }],
 
   // No borra las variables que pongas en Cloudflare (Settings → Variables and Secrets) al publicar
   "keep_vars": true,

@@ -1,6 +1,6 @@
 {
-  "name": "Demo Store",
-  "short_name": "Demo Store",
+  "name": "Demo Web",
+  "short_name": "Demo Web",
   "description": "Tienda de demostración con artículos, precios e imágenes de ejemplo.",
   "lang": "es-CL",
   "dir": "ltr",

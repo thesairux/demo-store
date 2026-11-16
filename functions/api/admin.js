@@ -27,7 +27,7 @@ const RUTA_FOTO = /^(img\/catalogo\/[\w.-]+\.(webp|jpg|png)|img\/[\w.-]+\.(webp|
 const FOTO_SUBIDA = /^fotos\/[a-z0-9-]{3,48}\.jpg$/;
 
 const CABECERA = `/*
-  CATÁLOGO DE DEMO STORE
+  CATÁLOGO DE DEMO WEB
   ======================
   Lo más fácil es editarlo desde el panel: tu-pagina/admin
   También se puede editar aquí: los precios van sin punto ni signo (22990), las tallas como
@@ -75,7 +75,7 @@ async function gh(ruta, opts = {}) {
     headers: {
       Authorization: `Bearer ${token()}`,
       Accept: "application/vnd.github+json",
-      "User-Agent": "panel-demo-store",
+      "User-Agent": "panel-demo-web",
       "X-GitHub-Api-Version": "2022-11-28",
       ...(opts.body ? { "Content-Type": "application/json" } : {})
     },

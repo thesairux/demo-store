@@ -1,5 +1,5 @@
 /* =========================================================================
-   Demo Store — la página
+   Demo Web — la página
    Todo lo que se ve sale de catalogo.js. Este archivo arma el menú, la portada,
    el catálogo, la ficha de cada zapato, el carrito y el checkout, y al final
    escribe el pedido en WhatsApp. No hay que editarlo para cambiar productos.
@@ -17,9 +17,9 @@
 
   var C = window.CATALOGO || {};
   var N = C.negocio || {};
-  var LLAVE_CARRITO = "demostore-carrito-v2";
-  var LLAVE_DATOS = "demostore-datos-v1";
-  var LLAVE_FAVORITOS = "demostore-favoritos-v1";
+  var LLAVE_CARRITO = "demoweb-carrito-v2";
+  var LLAVE_DATOS = "demoweb-datos-v1";
+  var LLAVE_FAVORITOS = "demoweb-favoritos-v1";
 
   /* ---------- Ayudas ---------- */
   function $(sel, raiz) { return (raiz || document).querySelector(sel); }

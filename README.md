@@ -1,4 +1,4 @@
-# Demo Store — tienda de demostración
+# Demo Web — tienda de demostración
 
 > **Esta es una tienda de prueba.** Los artículos («Botín Demo 01», «Zapatilla Demo 03»…), los
 > precios, las imágenes, el WhatsApp y los textos son de ejemplo. Sirve para mostrar y probar todo
@@ -328,7 +328,7 @@ contadores por día y cuántas veces se vio o se agregó cada modelo.
 Para activarlas hace falta una base de datos gratuita de Cloudflare (D1) —la misma que guarda las
 cuentas del panel (punto 3)—. Se hace una sola vez:
 
-1. En Cloudflare: **Storage & Databases → D1 → Create**. Nómbrala `demo-store-estadisticas`.
+1. En Cloudflare: **Storage & Databases → D1 → Create**. Nómbrala `demo-web-estadisticas`.
 2. Copia el **Database ID**.
 3. En el repositorio, abre `wrangler.jsonc`: la línea de `d1_databases` está comentada. Quítale las
    barras del principio y pega ahí el ID.
@@ -436,7 +436,7 @@ sección aparece sola, con su mapa y su horario.
    para ver cómo llega el pedido.
 2. **El panel:** en el proyecto de la demo, `GITHUB_REPO` tiene que apuntar a este repositorio
    (`usuario/demo-store`), no al de la tienda real; si no, los cambios del panel irían a la otra.
-3. **Cloudflare Workers:** `wrangler.jsonc` publica con el nombre `demo-store`, así no pisa otro
+3. **Cloudflare Workers:** `wrangler.jsonc` publica con el nombre `demo-web`, así no pisa otro
    proyecto.
-4. **La base D1** (opcional): créala con el nombre `demo-store-estadisticas` si quieres probar las
+4. **La base D1** (opcional): créala con el nombre `demo-web-estadisticas` si quieres probar las
    estadísticas y las cuentas propias (ver punto 5).

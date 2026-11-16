@@ -1,5 +1,5 @@
 /* =========================================================================
-   Demo Store — asistente (el chat de abajo a la derecha)
+   Demo Web — asistente (el chat de abajo a la derecha)
 
    Con la IA configurada (GEMINI_API_KEY o ANTHROPIC_API_KEY en las variables del proyecto, ver
    functions/api/asistente.js) responde con IA usando el catálogo publicado.
@@ -14,7 +14,7 @@
   var C = P.datos();
   var N = C.negocio || {};
   var API = "/api/asistente";
-  var GUARDADO = "demostore-chat-v1";
+  var GUARDADO = "demoweb-chat-v1";
   var modoIA = location.protocol !== "file:";
   var mensajes = [];      // { role, content, productos, opciones }
   var ocupado = false;

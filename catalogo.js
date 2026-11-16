@@ -1,5 +1,5 @@
 /*
-  CATÁLOGO DE DEMO STORE
+  CATÁLOGO DE DEMO WEB
   ======================
   Lo más fácil es editarlo desde el panel: tu-pagina/admin
   También se puede editar aquí: los precios van sin punto ni signo (22990), las tallas como
@@ -8,7 +8,7 @@
 */
 window.CATALOGO = {
   "negocio": {
-    "nombre": "Demo Store",
+    "nombre": "Demo Web",
     "rubro": "Calzado",
     "whatsapp": "56900000000",
     "whatsappVisible": "+56 9 0000 0000",

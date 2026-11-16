@@ -242,7 +242,7 @@ def logo(ruta, color_marca):
     esc = 0.95 * SS
     dibujar_zapato(im, "zapatilla", col, esc, (L * SS - 400 * esc) / 2, 150 * SS, sombra=False)
     d = ImageDraw.Draw(im)
-    d.text((L * SS / 2, 168 * SS), "DEMO STORE", font=fuente(52 * SS), fill=BLANCO, anchor="mm")
+    d.text((L * SS / 2, 168 * SS), "DEMO WEB", font=fuente(62 * SS), fill=BLANCO, anchor="mm")
     d.text((L * SS / 2, 440 * SS), "TIENDA DE PRUEBA", font=fuente(30 * SS, FUENTES_MEDIA), fill=(255, 210, 120), anchor="mm")
     im = im.resize((L, L), Image.LANCZOS).convert("RGB")
     guardar(im, ruta)
