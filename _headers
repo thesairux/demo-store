@@ -1,0 +1,29 @@
+# Cabeceras de la página en Cloudflare Pages
+/catalogo.js
+  Cache-Control: no-cache
+
+# El panel lleva su código adentro, así que no se le puede poner marca de versión
+# como al resto: se pide que el navegador lo revise siempre.
+/admin
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: no-store
+
+/admin.html
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: no-store
+
+/fotos/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+/site.webmanifest
+  Content-Type: application/manifest+json; charset=utf-8
+  Cache-Control: public, max-age=86400
+
+/img/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+/css/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+/js/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800

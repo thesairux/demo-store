@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, interactive-widget=resizes-content">
+<title>Demo Store | Tienda de demostración</title>
+<meta name="description" content="Demo Store: tienda de demostración con artículos, precios e imágenes de ejemplo.">
+<meta name="theme-color" content="#183049">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Demo Store | Tienda de demostración">
+<meta property="og:description" content="Tienda de demostración: artículos y precios de ejemplo.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="img/icono-180.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="css/estilos.css">
+<!-- Productos, precios, tallas, despachos y datos de la tienda: se editan en catalogo.js -->
+<script src="catalogo.js"></script>
+<script src="js/tema.js"></script>
+<script src="js/comunas.js"></script>
+<script src="js/app.js" defer></script>
+<script src="js/asistente.js" defer></script>
+</head>
+<body>
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+
+<div class="anuncio" data-anuncio hidden></div>
+
+<header class="cabecera">
+  <div class="contenedor cabecera-fila">
+    <button class="icono-boton solo-movil" type="button" data-abrir-menu aria-label="Abrir el menú" aria-expanded="false">
+      <svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+
+    <a class="marca" href="#/" aria-label="Demo Store, ir al inicio">
+      <b>DEMO</b><span>STORE</span>
+    </a>
+
+    <nav class="menu" data-menu aria-label="Categorías"></nav>
+
+    <div class="cabecera-acciones">
+      <button class="icono-boton" type="button" data-abrir-buscador aria-label="Buscar" aria-expanded="false">
+        <svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+      </button>
+      <a class="icono-boton" href="#/favoritos" data-ir-favoritos aria-label="Tus favoritos">
+        <svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.3-7-9.3A4 4 0 0 1 12 8a4 4 0 0 1 7 2.7c0 5-7 9.3-7 9.3Z"/></svg>
+        <span class="globo globo--fav" data-contador-fav hidden>0</span>
+      </a>
+      <button class="icono-boton icono-boton--bolsa" type="button" data-abrir-carrito aria-label="Mi carrito, 0 productos">
+        <svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+        <span class="globo" data-contador hidden>0</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="barra-buscador" data-barra-buscador hidden>
+    <div class="contenedor barra-buscador-fila">
+      <svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+      <input type="search" data-buscar placeholder="Busca por modelo, color o categoría…" aria-label="Buscar en el catálogo" autocomplete="off" enterkeyhint="search">
+      <button class="icono-boton" type="button" data-cerrar-buscador aria-label="Cerrar la búsqueda">
+        <svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav class="menu-movil" data-menu-movil hidden aria-label="Menú">
+  <div class="menu-movil-cab">
+    <span class="marca"><b>DEMO</b><span>STORE</span></span>
+    <button class="icono-boton" type="button" data-cerrar-menu aria-label="Cerrar el menú">
+      <svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+  </div>
+  <div class="menu-movil-lista" data-menu-movil-lista></div>
+  <div class="menu-movil-pie">
+    <a class="boton boton--wsp" data-wsp href="#" target="_blank" rel="noopener">
+      <svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 19.5 5.6 16A8 8 0 1 1 8.4 18.6Z"/><path d="M9.2 8.6c.3 2.7 2.4 5 5.2 5.6l1.2-1.3-1.8-1-1 .7c-.9-.5-1.7-1.3-2.2-2.2l.7-1-1-1.8Z"/></svg>
+      Escríbenos por WhatsApp
+    </a>
+  </div>
+</nav>
+
+<main id="contenido">
+  <section class="vista" data-vista="inicio" hidden>
+    <div class="portada" data-portada></div>
+    <section class="bloque" aria-labelledby="destacados-titulo">
+      <div class="contenedor">
+        <div class="bloque-cab">
+          <h2 class="titulo" id="destacados-titulo" data-texto="destacados.titulo">Destacados</h2>
+          <a class="enlace-flecha" href="#/catalogo">Ver todo <svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+        <div data-destacados></div>
+      </div>
+    </section>
+    <section class="temporada" data-temporada hidden></section>
+    <section class="bloque" aria-labelledby="categorias-titulo">
+      <div class="contenedor">
+        <div class="bloque-cab"><h2 class="titulo" id="categorias-titulo">Compra por categoría</h2></div>
+        <div class="mosaico" data-mosaico></div>
+      </div>
+    </section>
+    <section class="bloque bloque--cupones" data-cupones-bloque hidden aria-labelledby="cupones-titulo">
+      <div class="contenedor">
+        <div class="bloque-cab"><h2 class="titulo" id="cupones-titulo">Cupones de descuento</h2></div>
+        <div class="cupones-lista" data-cupones></div>
+      </div>
+    </section>
+    <section class="pasos" aria-labelledby="pasos-titulo">
+      <div class="contenedor">
+        <h2 class="titulo" id="pasos-titulo" data-texto="pasos.titulo">Comprar es simple</h2>
+        <ol class="pasos-lista" data-pasos></ol>
+      </div>
+    </section>
+
+    <section class="bloque" id="tienda" data-si="direccion" hidden aria-labelledby="tienda-titulo">
+      <div class="contenedor tienda-grilla">
+        <div>
+          <h2 class="titulo" id="tienda-titulo" data-texto="tienda.titulo">Visítanos en la tienda</h2>
+          <ul class="datos-local">
+            <li>
+              <svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11Z"/><circle cx="12" cy="10" r="2.3"/></svg>
+              <div><b data-dato="direccion"></b><span data-dato="sector-ciudad-region"></span></div>
+            </li>
+            <li data-si="horario">
+              <svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="7.5"/><path d="M12 8v4l2.5 2"/></svg>
+              <div data-horario-largo></div>
+            </li>
+            <li data-si="pagos">
+              <svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="6" width="17" height="12" rx="1.5"/><path d="M3.5 10h17M7 14.5h3"/></svg>
+              <div><b>Formas de pago</b><span data-dato="pagos"></span></div>
+            </li>
+            <li>
+              <svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h11v8H3zM14 10h4l3 3v2h-7z"/><circle cx="7" cy="17" r="1.8"/><circle cx="17.5" cy="17" r="1.8"/></svg>
+              <div><b>Despachos</b><span data-envios-texto></span></div>
+            </li>
+          </ul>
+        </div>
+        <figure class="mapa">
+          <iframe data-mapa-embed title="Mapa de la tienda" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <figcaption><a data-mapa href="#" target="_blank" rel="noopener">Ver en Google Maps <svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></figcaption>
+        </figure>
+      </div>
+    </section>
+  </section>
+
+  <section class="vista" data-vista="catalogo" hidden></section>
+  <section class="vista" data-vista="producto" hidden></section>
+  <section class="vista" data-vista="checkout" hidden></section>
+</main>
+
+<footer class="pie">
+  <div class="contenedor pie-grilla">
+    <div>
+      <span class="marca marca--pie"><b>DEMO</b><span>STORE</span></span>
+      <p class="pie-texto">Calzado con estilo, comodidad y versatilidad para tu día a día.</p>
+      <div class="pie-redes">
+        <a class="icono-boton" data-wsp href="#" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 19.5 5.6 16A8 8 0 1 1 8.4 18.6Z"/><path d="M9.2 8.6c.3 2.7 2.4 5 5.2 5.6l1.2-1.3-1.8-1-1 .7c-.9-.5-1.7-1.3-2.2-2.2l.7-1-1-1.8Z"/></svg>
+        </a>
+        <a class="icono-boton" data-instagram data-si="instagram" hidden href="#" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="3.8"/><circle cx="17.2" cy="6.8" r=".9" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a class="icono-boton" data-facebook data-si="facebook" hidden href="#" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" stroke="none" d="M13.5 21v-7.3h2.4l.4-2.9h-2.8V9c0-.8.3-1.4 1.5-1.4h1.4V5c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2.1H8.1v2.9h2.4V21h3Z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div>
+      <b class="pie-titulo">Catálogo</b>
+      <ul class="pie-lista" data-pie-categorias></ul>
+    </div>
+    <div>
+      <b class="pie-titulo">Ayuda</b>
+      <ul class="pie-lista">
+        <li><a href="#" data-abrir-tallas>Guía de tallas</a></li>
+        <li><button class="pie-enlace" type="button" data-ventana="politicas">Políticas de compra</button></li>
+        <li data-si="direccion" hidden><a href="#/" data-ir-tienda>Dónde estamos</a></li>
+        <li><a data-wsp href="#" target="_blank" rel="noopener">Hablar por WhatsApp</a></li>
+      </ul>
+    </div>
+    <div>
+      <b class="pie-titulo">Antes de comprar</b>
+      <ul class="pie-lista" data-pie-politicas></ul>
+    </div>
+  </div>
+  <div class="contenedor pie-abajo">
+    <p>Los precios y el stock son referenciales: confirmamos todo por WhatsApp antes de que pagues.</p>
+    <p class="pie-firma">Hecho por
+      <a class="firma" href="https://altiroweb.cl" target="_blank" rel="noopener">
+        <span class="firma-marca" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M13.5 2.5 4 14h6.2l-.7 7.5L20 10h-6.2Z"/></svg>
+        </span>
+        <span class="firma-texto"><b>altiroweb</b>.cl</span>
+      </a>
+    </p>
+  </div>
+</footer>
+
+<div class="velo" data-velo hidden></div>
+
+<aside class="carrito" data-carrito hidden aria-label="Tu carrito">
+  <header class="carrito-cab">
+    <div>
+      <h2 class="titulo">Tu carrito</h2>
+      <p class="carrito-cuenta" data-carrito-cuenta>0 productos</p>
+    </div>
+    <button class="icono-boton" type="button" data-cerrar-carrito aria-label="Cerrar el carrito">
+      <svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+  </header>
+  <div class="carrito-cuerpo" data-carrito-cuerpo></div>
+  <div class="carrito-pie" data-carrito-pie></div>
+</aside>
+
+<dialog class="ventana" data-ventana-tallas aria-labelledby="vt-titulo">
+  <div class="ventana-caja">
+    <header class="ventana-cab">
+      <h2 class="titulo" id="vt-titulo" data-texto="tallas.titulo">Guía de tallas</h2>
+      <button class="icono-boton" type="button" data-cerrar-ventana aria-label="Cerrar">
+        <svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </header>
+    <div class="ventana-cuerpo">
+      <p class="texto-suave" data-texto="tallas.bajada"></p>
+      <table class="tabla-tallas">
+        <thead><tr><th scope="col">Talla</th><th scope="col">Largo del pie</th><th scope="col">US</th></tr></thead>
+        <tbody data-guia-tallas></tbody>
+      </table>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="ventana" data-ventana-info aria-labelledby="vi-titulo">
+  <div class="ventana-caja">
+    <header class="ventana-cab">
+      <h2 class="titulo" id="vi-titulo" data-info-titulo>Información</h2>
+      <button class="icono-boton" type="button" data-cerrar-ventana aria-label="Cerrar">
+        <svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </header>
+    <div class="ventana-cuerpo" data-info-cuerpo></div>
+  </div>
+</dialog>
+
+<div class="aviso" data-aviso role="status" aria-live="polite"></div>
+</body>
+</html>
